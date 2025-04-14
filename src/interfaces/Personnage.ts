@@ -4,5 +4,6 @@ export interface Personnage {
   description: string;
   image: string;
   puissance: number;
-  categorie?: string; // Catégorie optionnelle
+  categorie?: string;
+  audio: string; // Catégorie optionnelle
 }

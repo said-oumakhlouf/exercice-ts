@@ -1,6 +1,7 @@
 // src/components/Modale.tsx
 import { motion } from "framer-motion";
 import { Personnage } from "../interfaces/Personnage";
+import { useEffect, useRef } from "react";
 
 interface ModaleProps {
   personnage: Personnage;
@@ -8,6 +9,20 @@ interface ModaleProps {
 }
 
 const Modale = ({ personnage, onClose }: ModaleProps) => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio(personnage.audio);
+    audioRef.current.play();
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, [personnage]);
+
   return (
     <motion.div
       className="fixed inset-0 flex justify-center items-center m-4 p-4 border bg-gray-500 bg-opacity-50 z-50 rounded-lg"
