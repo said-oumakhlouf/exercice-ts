@@ -1,12 +1,7 @@
 // src/components/Modale.tsx
 import { motion } from "framer-motion";
-import { Personnage } from "../interfaces/Personnage";
 import { useEffect, useRef } from "react";
-
-interface ModaleProps {
-  personnage: Personnage;
-  onClose: () => void;
-}
+import { ModaleProps } from "../interfaces/Modale";
 
 const Modale = ({ personnage, onClose }: ModaleProps) => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
