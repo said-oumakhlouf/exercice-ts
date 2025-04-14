@@ -27,7 +27,7 @@ Le projet contient plusieurs composants/test que je peux activer/désactiver fac
 - Affichage en **modale centrée**
 - Une **musique unique** par personnage
 - Filtres par catégorie (héros / méchants)
-- Pagination (en cours d'ajout)
+- Pagination (ajouter)
 
 ## ▶️ Lancer le projet en local
 
